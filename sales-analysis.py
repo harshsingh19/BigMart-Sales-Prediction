@@ -182,4 +182,4 @@ train.drop('Item_Outlet_Sales',axis=1,inplace=True)
 lr = LinearRegression();
 lr.fit(train, y)
 y_pred = lr.predict(test)
-print(sqrt(mean_squared_error(np.log(y), np.log(y_pred))))
+print(sqrt(me
