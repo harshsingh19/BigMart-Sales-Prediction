@@ -5,7 +5,7 @@ Created on Thu Mar 28 15:40:18 2019
 
 @author: harsh
 """
-
+#importing libraris
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -17,6 +17,7 @@ from math import sqrt
 from sklearn.linear_model import LinearRegression
 from scipy.stats import mode
 
+#importing dataset
 dftrain = pd.read_csv('Train.csv')
 dftest  = pd.read_csv('Test.csv')
 dftrain['source'] = 'train'
@@ -39,6 +40,7 @@ for word in No_null:
     else:
         counts[word] = 1
 """
+#describing the data using describe.
 data['Item_Outlet_Sales'].describe()
 
 
@@ -50,7 +52,7 @@ print("Shows Positive Skewness")
 print('Skewness: %f' % data['Item_Outlet_Sales'].skew())
 
 data.columns
-"""Distgusing Categorical and Numerical Data"""
+"""-----Distgusing Categorical and Numerical Data-----"""
 categorial_features = data.select_dtypes(include=[np.object])
 numerical_features = data.select_dtypes(include=[np.number])
 for x in categorial_features:
@@ -62,7 +64,7 @@ data.apply(lambda x: sum(x.isnull()))
 "---Counting Unique Values in each coloum---"
 data.apply(lambda x : len(x.unique()))
 
-"Ploating VS Graph using "
+"-----Ploating VS Graph using-----"
 plt.figure(figsize = (10,9))
 
 plt.subplot(311)
